@@ -1,0 +1,22 @@
+<?php
+
+class AnotherDeserializer implements DeserializerInterface
+{
+    /**
+     * @return array<Item>
+     */
+    public function dis(array $getContent): array
+    {
+        $arrayOfObj = [];
+        $arrayOfArrays = $getContent;
+        foreach ($arrayOfArrays as $itemArray) {
+            $element = new Item();
+            $element
+                ->setTag($itemArray["tag"])
+                ->setText($itemArray["text"])
+                ->setStyle($itemArray["style"]);
+            $arrayOfObj[] = $element;
+        }
+        return $arrayOfObj;
+    }
+}

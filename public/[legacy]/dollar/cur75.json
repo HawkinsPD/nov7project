@@ -1,0 +1,17 @@
+[
+  {
+    "text": "title",
+    "style": "margin-bottom: 1rem",
+    "tag": "h1"
+  },
+  {
+    "text": "main content",
+    "style": "color: green",
+    "tag": "div"
+  },
+  {
+    "text": "main ave",
+    "style": "color: red",
+    "tag": "h2"
+  }
+]
