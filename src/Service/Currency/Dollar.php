@@ -1,10 +1,9 @@
 <?php
 
+namespace App\Service\Currency;
+
 class Dollar
 {
-    /**
-     * @var DeserializerInterface[]
-     */
     private array $deserializer;
     public string $valute;
 //    public function __construct(string $fileName, DesInterface $deserializer, string $valute)
@@ -27,11 +26,10 @@ class Dollar
         for ($i = 0; $i <= count($this->deserializer)-1; $i+=2) {
 
             $result[] = $this->deserializer[$i];
-            $arrayItem = $this->deserializer[$i+1]->des($this->deserializer[$i], $this->valute);
+            $arrayItem = $this->deserializer[$i+1]->deserialize($this->deserializer[$i], $this->valute);
             $result[] = $arrayItem;
         }
 
         return json_encode($result, true);
     }
-
 }

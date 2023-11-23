@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Service\Currency;
+
 class DesJSON implements DesInterface
 {
     public function deserialize(string $data, string $valute): string
