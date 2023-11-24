@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use DesJSON;
-use DesXML;
-use Dollar;
+
+use App\Service\Currency\Dollar;
+use App\Service\Currency\DesJSON;
+use App\Service\Currency\DesXML;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

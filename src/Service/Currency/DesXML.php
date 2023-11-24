@@ -12,12 +12,13 @@ class DesXML implements DesInterface
         $xmlDecode = json_decode($xmlEncode, true);
         $result = '';
         foreach ($xmlDecode as $key) {
-            for ($i = 0; $i <= count($key); $i++)
-                if ($key[$i]['CharCode'] == $valute) {
-                    $result = ($key[$i]['Value']);
-                }
+                for ($i = 0; $i <= count($key); $i++)
+                    if (isset($key[$i])) {
+                        if ($key[$i]['CharCode'] == $valute) {
+                            $result = ($key[$i]['Value']);
+                        }
+                    }
         }
-        return $result;
-
+        return json_encode($result);
     }
 }
