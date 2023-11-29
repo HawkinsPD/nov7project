@@ -1,3 +1,5 @@
+
+
 function addImg(source)
 {
     if (typeof(source) === typeof[]) {
@@ -45,3 +47,19 @@ function resetForm(id)
 {
     document.getElementById(id).reset()
 }
+function addElement(currency, date, type)
+{
+    const newDiv = document.createElement("div");
+    const newContent = document.createTextNode(currency + ' ' + date + ' ' + type);
+    newDiv.appendChild(newContent);
+    const currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
+}
+function getCurrencyXML()
+{
+    fetch('https://www.cbr.ru/scripts/XML_daily.asp?date_req=11-11-2023' ,{method: 'get'} )
+        .then(data => data.json().then(result => {
+            addElement(result);console.log(result);
+        }));
+}
+
